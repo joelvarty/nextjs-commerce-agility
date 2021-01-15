@@ -16,6 +16,8 @@ export async function getStaticProps({
 }: GetStaticPropsContext) {
   const config = getConfig({ locale })
 
+  console.log("ENV VAR: ", process.env.BIGCOMMERCE_STOREFRONT_API_TOKEN)
+  
   const { products: featuredProducts } = await getAllProducts({
     variables: { field: 'featuredProducts', first: 6 },
     config,
