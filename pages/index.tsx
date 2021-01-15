@@ -16,7 +16,13 @@ export async function getStaticProps({
 }: GetStaticPropsContext) {
   const config = getConfig({ locale })
 
-  console.log("ENV VAR: ", process.env.BIGCOMMERCE_STOREFRONT_API_TOKEN)
+  console.log("BIGCOMMERCE_STOREFRONT_API_URL: ", process.env.BIGCOMMERCE_STOREFRONT_API_URL)
+  console.log("BIGCOMMERCE_STOREFRONT_API_TOKEN: ", process.env.BIGCOMMERCE_STOREFRONT_API_TOKEN)
+  
+  console.log("BIGCOMMERCE_STORE_API_URL: ", process.env.BIGCOMMERCE_STORE_API_URL)   
+  console.log("BIGCOMMERCE_STORE_API_TOKEN: ", process.env.BIGCOMMERCE_STORE_API_TOKEN)
+  console.log("BIGCOMMERCE_STORE_API_CLIENT_ID: ", process.env.BIGCOMMERCE_STORE_API_CLIENT_ID)
+  
   
   const { products: featuredProducts } = await getAllProducts({
     variables: { field: 'featuredProducts', first: 6 },
